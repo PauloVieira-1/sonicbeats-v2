@@ -1,0 +1,13 @@
+li {
+  list-style: none;
+  text-align: center;
+}
+
+.bullets {
+  list-style: circle;
+}
+
+.active {
+  background-color: #3f75a0;
+  transition: shadow-transition 0.5s;
+}

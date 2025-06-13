@@ -2,3 +2,116 @@ body {
   background-color: #323232 !important;
   color: white !important;
 }
+
+.active:hover {
+  background-color: #323232 !important;
+  color: white !important;
+  transition: 0.35s;
+}
+
+.transition-fast {
+  animation-name: transition-to-left;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  transition: top 0.3s;
+}
+
+.transition-slow {
+  animation-name: transition-to-left;
+  animation-duration: 1.3s;
+  animation-iteration-count: 1;
+  transition: top 0.3s;
+}
+
+.shadow-transition {
+  animation-name: shadow-transition;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.fade-in-animation {
+  animation: fadeInAnimation ease-in 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.recolor-image {
+  filter: invert(100%) brightness(200%);
+  transition: all 0.5s ease-out;
+}
+
+.transition-width {
+  animation-name: transition-width;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  z-index: 0;
+  transition: ease-in;
+}
+
+@keyframes transition-width {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.transition-height {
+  animation-name: transition-height;
+  animation-duration: 0.7s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  transition: ease-in;
+  z-index: 0;
+}
+
+@keyframes transition-height {
+  from {
+    max-height: 0px;
+  }
+  to {
+    max-height: 500px;
+  }
+}
+
+@keyframes shadow-transition {
+  from {
+    box-shadow: none;
+  }
+  to {
+    box-shadow:
+      rgba(75, 75, 75, 0.25) 0px 14px 28px,
+      rgba(50, 50, 50, 0.22) 0px 10px 10px;
+  }
+}
+
+@keyframes transition-to-left {
+  from {
+    transform: translateX(-1000px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.img-effect {
+  transition: all 0.4s ease-out;
+}
+
+.img-effect:hover {
+  transform: scale(1.02);
+  box-shadow:
+    rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
