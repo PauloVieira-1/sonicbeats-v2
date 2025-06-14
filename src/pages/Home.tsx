@@ -1,6 +1,8 @@
 import {Container, Row, Col} from "react-bootstrap"
 import backgroundImage from "../assets/jpeg/bg.jpg"
+import Dan from "../assets/jpeg/DanBlack.jpg"
 import ProductCards from "../Components/ProductCards/ProductCards"
+import CustomButton from "../Components/Buttons/CustomButton"
 
 function Home() {
     return (
@@ -24,7 +26,7 @@ function Home() {
                 </Col>
             </Row>
         </Container>
-        <Container className="bg-secondary pt-5 d-flex align-items-center justify-content-center flex-column mt-5" fluid >
+        <Container className="bg-secondary pt-5 d-flex align-items-center justify-content-center flex-column mt-5 mb-5" fluid >
             <Row  style={{height: "35vh"}}>
                 <Col className="ps-5" xs={4}>
                     <div className=" p-5 text-black" style={{height: "20vh"}} >
@@ -37,9 +39,53 @@ function Home() {
                     </div>
                 </Col>
             </Row>
-            <Row>
+            <Row style={{height: "110vh"}}>
                 <Col>
                     <ProductCards></ProductCards>
+                    <div className="pt-4 d-flex justify-content-center">
+                        <hr style={{border: "1px solid black ", width: "70%"}} />
+                    </div>
+                </Col>
+            </Row>
+        </Container>
+        <Container
+        fluid
+        className="bg-primary d-flex align-items-center justify-content-center mt-5 text-secondary"
+        >
+        <div style={{ minWidth: "90%", maxWidth: "1000px", height: "70vh" }}>
+            <Row className="h-100 d-flex align-items-center">
+            <Col xs={4} className="pe-5 h-100 ">
+                <img
+                src={Dan}
+                alt="Dan"
+                className="img-fluid w-100 h-100 object-fit-cover rounded-start-4"
+                />
+            </Col>
+<Col className="ps-4 h-100 text-start d-flex flex-column justify-content-between">
+    <div className="p-3">
+        <h1 className="fw-bold display-2 mb-5">Our Story</h1>    
+        <h4 className="fw-lighter">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus vero excepturi velit est. 
+            Facilis laboriosam odit neque perspiciatis quis corporis saepe quisquam deleniti voluptatibus 
+            inventore sed, aut beatae ducimus nostrum dicta. Temporibus, dignissimos? Error, itaque labore 
+            quisquam omnis eius nisi? Error expedita reprehenderit exercitationem delectus nihil mollitia, 
+            maxime sed distinctio.
+        </h4>
+    </div>
+
+    <div className="d-flex justify-content-end p-3">
+        <CustomButton variant="secondary" href="/about">About us</CustomButton>
+    </div>
+</Col>
+
+            </Row>
+        </div>
+        </Container>
+
+        <Container className="bg-secondary pt-5 d-flex align-items-center justify-content-center flex-column mt-5" fluid >
+            <Row  style={{height: "50vh"}}>
+                <Col className="text-end pe-5" xs={5}>
+                    <p className="fw-light fs-5">All rights reserved. Created by Dan Vorstenbosch</p>
                 </Col>
             </Row>
         </Container>

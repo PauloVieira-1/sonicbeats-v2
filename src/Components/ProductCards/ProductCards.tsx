@@ -5,19 +5,17 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import CustomButton from "../Buttons/CustomButton";
 
-import "./ProductCards.css";
+import "./ProductCards";
 import { ProductExamples } from "./ProductExampls";
 
-interface ProductCardsProps {
-  product: string;
-}
+type ProductKey = 'Product1' | 'Product2' | 'Product3' | 'Product4';
 
-function ProductCards(_props: ProductCardsProps) {
-  const [product, setProduct] = useState<string>("Product1");
+function ProductCards() {
+  const [product, setProduct] = useState<ProductKey>("Product1");
 
-  function handleSelect(product: string) {
+  const handleSelect = (product: ProductKey) => {
     setProduct(product);
-  }
+  };
 
   return (
     <Container className="mt-5 bg-light px-4 pt-4 rounded-5 shadow mb-5 text-primary">
@@ -90,21 +88,20 @@ function ProductCards(_props: ProductCardsProps) {
                 />
               </Col>
               <Col className="px-5 py-4" sm={12} lg={6}>
-                <h3 className="mb-3">{ProductExamples[product].title}</h3>
-                <p>{ProductExamples[product].description}</p>
+                <h3 className="mb-3">{ProductExamples[product as ProductKey].title}</h3>
+                <p>{ProductExamples[product as ProductKey].description}</p>
                 <ul className="fw-lighter ml-0">
-                  {Object.keys(ProductExamples[product].specifications).map(
-                    (key) => (
+                  {Object.entries(ProductExamples[product].specifications).map(
+                    ([key, value]) => (
                       <li key={key} className="text-start bullets">
-                        {key.split("_").join(" ")}:{" "}
-                        {ProductExamples[product].specifications[key]}
+                        {key.replace(/_/g, " ")}: {value}
                       </li>
                     )
                   )}
-                  {Object.keys(ProductExamples[product].aditionalInfo).map(
-                    (key) => (
-                      <li className="text-start bullets" key={key}>
-                        {ProductExamples[product].aditionalInfo[key]}
+                  {ProductExamples[product].aditionalInfo.map(
+                    (info, index) => (
+                      <li className="text-start bullets" key={index}>
+                        {info}
                       </li>
                     )
                   )}
@@ -119,4 +116,6 @@ function ProductCards(_props: ProductCardsProps) {
 }
 
 export default ProductCards;
+
+
 

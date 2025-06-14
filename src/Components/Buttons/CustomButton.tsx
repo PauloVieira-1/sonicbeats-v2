@@ -1,6 +1,6 @@
 import { Button } from "react-bootstrap";
  
-const CustomButton = ({ variant = "primary", isActive = false, ...props }) => {
+const CustomButton = ({ variant = "secondary", isActive = false, ...props }) => {
     let variantClass = "";
     switch (variant) {
         case "primary":
