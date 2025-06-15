@@ -2,6 +2,7 @@ import Home from "./pages/Home"
 import { Routes, Route } from 'react-router-dom';
 import Navbar from "./Components/Navbar/Nav"
 import "./styles/global.css"
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="/additional-services" element={<h1>Checkout</h1>} />
       <Route path="/request-product" element={<h1>Checkout</h1>} />
     </Routes>
+    <Footer />
     </>
   )
 }

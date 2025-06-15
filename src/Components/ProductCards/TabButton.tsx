@@ -1,5 +1,5 @@
 import { Button, ButtonProps } from "react-bootstrap";
-import "./ProductCards.css";
+import "./ProductCards";
 
 interface TabButtonProps extends ButtonProps {
   isActive?: boolean;

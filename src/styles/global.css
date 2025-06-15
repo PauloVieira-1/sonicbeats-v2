@@ -9,6 +9,14 @@ body {
   transition: 0.35s;
 }
 
+.active-light:hover {
+  background-color: #F2EDE7 !important;
+  color: #323232 !important;
+  transition: 0.35s;
+}
+
+
+
 .transition-fast {
   animation-name: transition-to-left;
   animation-duration: 1s;
