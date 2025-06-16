@@ -10,6 +10,9 @@ import Image3 from "../assets/jpeg/Product1b.jpeg"
 import Image4 from "../assets/jpeg/simplisticbg.jpeg"
 import Product1d from "../assets/jpeg/Product1d.jpeg"
 
+import { useEffect, useRef, useMemo } from "react";
+
+
 const images = [
     {text: "Handcrafted speakers", image: Image1, subtext: "Experience the finest craftsmanship."},
     {text: "Portable power", image: Image2, subtext: "Unleash power on the go."},
@@ -18,6 +21,41 @@ const images = [
 ];
 
 function Home() {
+
+    const headingRef = useRef<HTMLDivElement>(null);
+    const subheadingRef = useRef<HTMLDivElement>(null);
+
+    const revealRefs = useMemo(() => [headingRef, subheadingRef], [ headingRef, subheadingRef ]);
+
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.target === headingRef.current && entry.isIntersecting) {
+                    entry.target.classList.add('transition-slow');
+                } 
+                
+                if (entry.target === subheadingRef.current && entry.isIntersecting) {
+                    entry.target.classList.add('transition-slow');
+                }
+            });
+        })
+
+        revealRefs.forEach(ref => {
+            if (ref.current) {
+                observer.observe(ref.current);
+            }
+        });
+
+        return () => {
+            revealRefs.forEach((ref) => {
+                if (ref.current) {
+                    observer.unobserve(ref.current);
+                }
+            });
+        };
+    }, [revealRefs, headingRef, subheadingRef]);
+
     return (
         <>
         <Container fluid>
@@ -25,8 +63,8 @@ function Home() {
                 <Col className="p-0">
                     <div className="bg-primary p-5 text-secondary" style={{height: "40vh"}} >
                         <div style={{position: "relative", top: "50%", left: "0%", transform: ""}}>
-                        <h1 className="fw-bold display-2">Sonicbeats</h1>    
-                        <h3 className="fw-lighter">Handcrafted by Dan Vorstenbosch</h3>
+                        <h1 className="fw-bold display-2 transition-slow">Sonicbeats</h1>    
+                        <h3 className="fw-lighter transition-fast">Handcrafted by Dan Vorstenbosch</h3>
                         </div>
                     </div>
                 </Col>
@@ -43,7 +81,7 @@ function Home() {
             <Row  style={{height: "35vh"}}>
                 <Col className="ps-5" xs={4}>
                     <div className=" p-5 text-black" style={{height: "20vh"}} >
-                        <h1 className="fw-bolder display-5">Our Speaker Collection</h1>
+                        <h1 ref={headingRef} className="fw-bolder display-5">Our Speaker Collection</h1>
                     </div>
                 </Col>
                 <Col>
@@ -94,11 +132,11 @@ function Home() {
             </Row>
         </div>
         </Container>
-        <Container className="bg-secondary pt-5 d-flex align-items-center justify-content-center flex-column mt-5 mb-5" fluid >
+        <Container className="bg-secondary pt-5 d-flex align-items-center justify-content-center flex-column mt-5 mb-1" fluid >
             <Row  style={{height: "35vh"}}>
                 <Col className="ps-5" xs={4}>
                     <div className=" p-5 text-black" style={{height: "20vh"}} >
-                        <h1 className="fw-bolder display-5">Additional Services</h1>
+                        <h1 ref={subheadingRef} className="fw-bolder display-5">Additional Services</h1>
                     </div>
                 </Col>
                 <Col>
@@ -107,7 +145,7 @@ function Home() {
                     </div>
                 </Col>
             </Row>
-            <Row style={{height: "110vh"}}>
+            <Row style={{height: "90vh"}}>
                 <Col>
                 <div>
 
@@ -115,14 +153,19 @@ function Home() {
                 </div>
                 </Col>
             </Row>
-            <Row style={{height: "110vh"}}>
-                <Col>
-                    <ProductCards></ProductCards>
-                    <div className="pt-4 d-flex justify-content-center">
-                        <hr style={{border: "1px solid black ", width: "70%"}} />
-                    </div>
-                </Col>
-            </Row>
+            <Row className="w-100 ">
+  <Col className="d-flex justify-content-center">
+    <hr
+      style={{
+        width: "70%",
+        height: "2px",
+        backgroundColor: "solid black",
+        border: "none",
+        margin: "2rem 0"
+      }}
+    />
+  </Col>
+</Row>
         </Container>
         <Container
         fluid
