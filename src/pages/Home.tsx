@@ -8,12 +8,13 @@ import Image1 from "../assets/jpeg/carousel-image-1.jpeg"
 import Image2 from "../assets/jpeg/Product3.jpeg"
 import Image3 from "../assets/jpeg/Product1b.jpeg"
 import Image4 from "../assets/jpeg/simplisticbg.jpeg"
+import Product1d from "../assets/jpeg/Product1d.jpeg"
 
 const images = [
-    {text: "Handcrafted speakers", image: Image1},
-    {text: "Portable power", image: Image2},
-    {text: "Sonic purity", image: Image3},
-    {text: "Simplistic beauty", image: Image4},
+    {text: "Handcrafted speakers", image: Image1, subtext: "Experience the finest craftsmanship."},
+    {text: "Portable power", image: Image2, subtext: "Unleash power on the go."},
+    {text: "Sonic purity", image: Image3, subtext: "Hear the difference in every note."},
+    {text: "Simplistic beauty", image: Image4, subtext: "Elegance in simplicity."},
 ];
 
 function Home() {
@@ -114,6 +115,44 @@ function Home() {
                 </div>
                 </Col>
             </Row>
+            <Row style={{height: "110vh"}}>
+                <Col>
+                    <ProductCards></ProductCards>
+                    <div className="pt-4 d-flex justify-content-center">
+                        <hr style={{border: "1px solid black ", width: "70%"}} />
+                    </div>
+                </Col>
+            </Row>
+        </Container>
+        <Container
+        fluid
+        className="bg-primary d-flex align-items-center justify-content-center mt-5 text-secondary"
+        >
+        <div style={{ minWidth: "90%", maxWidth: "1000px", height: "70vh" }}>
+            <Row className="h-100 d-flex align-items-center">
+                <Col className="pe-4 h-100 text-start d-flex flex-column justify-content-between">
+                    <div className="p-3">
+                        <h1 className="fw-bold display-2 mb-5">Design Process</h1>
+                        <h4 className="fw-lighter">
+                            Discover the meticulous design process that goes into creating our products. 
+                            From initial concepts to the final touches, every step is crafted with precision 
+                            and care, ensuring that each product not only looks stunning but also performs 
+                            exceptionally. Join us as we delve into the art and science of design.
+                        </h4>
+                    </div>
+                    <div className="d-flex justify-content-start p-3">
+                        <CustomButton variant="secondary" href="/about">Learn More</CustomButton>
+                    </div>
+                </Col>
+                <Col xs={4} className="ps-5 h-100">
+                    <img
+                    src={Product1d}
+                    alt="Dan"
+                    className="img-fluid w-100 h-100 object-fit-cover rounded-end-4"
+                    />
+                </Col>
+            </Row>
+        </div>
         </Container>
       </>
     );
