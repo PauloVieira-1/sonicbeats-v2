@@ -18,7 +18,7 @@ function ProductCards() {
   };
 
   return (
-    <Container className="mt-5 bg-light px-4 pt-4 rounded-5 shadow mb-5 text-primary">
+    <Container className="mt-5 bg-light px-5 pt-5 pt-4 rounded-5 shadow mb-5 text-primary">
       <Row>
         <Col xs={12} md={12}>
           <h2>Our Speaker Selection</h2>

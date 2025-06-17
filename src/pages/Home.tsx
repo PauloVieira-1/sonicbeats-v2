@@ -70,29 +70,53 @@ function Home() {
                 </Col>
             </Row>
         </Container>
-        <Container fluid >
+        <Container fluid className="d-none d-lg-block">
             <Row>
                 <Col style={{height: "80vh"}} className="bg-secondary p-0">
                 <img src={backgroundImage} style={{width: "100%", height: "100%", objectFit: "cover"}} className="img-fluid"></img>
                 </Col>
             </Row>
         </Container>
+        <Container fluid className="d-block d-lg-none">
+            <Row>
+                <Col style={{height: "40vh"}} className="bg-secondary p-0">
+                <img src={backgroundImage} style={{width: "100%", height: "100%", objectFit: "cover"}} className="img-fluid"></img>
+                </Col>
+            </Row>
+        </Container>
         <Container className="bg-secondary pt-5 d-flex align-items-center justify-content-center flex-column mt-5 mb-5" fluid >
-            <Row  style={{height: "35vh"}}>
-                <Col className="ps-5" xs={4}>
-                    <div className=" p-5 text-black" style={{height: "20vh"}} >
+            <Row style={{ height: "35vh" }} className="d-none d-lg-flex align-items-center">
+    <Col className="ps-5" xs={4}>
+        <div className="p-5 text-black">
+            <h1 ref={headingRef} className="fw-bolder display-5">Our Speaker Collection</h1>
+        </div>
+    </Col>
+    <Col xs={8}>
+        <div className="p-5 text-primary d-flex align-items-center justify-content-center">
+            <p className="fw-light fs-5 text-end">
+                Explore our collection of past speaker models. Each product is unique, offering distinctive features and quality sound. These photos showcase some of our past and current designs, however, you can place orders for customized speakers tailored to your specific needs.
+            </p>
+        </div>
+    </Col>
+</Row>
+
+             <Row   className="d-block d-lg-none">
+                <Col className="ps-5" xs={12}>
+                    <div className=" px-5 pt-4 text-black" style={{height: "100%"}} >
                         <h1 ref={headingRef} className="fw-bolder display-5">Our Speaker Collection</h1>
                     </div>
                 </Col>
                 <Col>
                     <div className=" p-5 text-primary justify-content-center d-flex align-items-center" >
-                        <p className="fw-light fs-5 text-end">Explore our collection of past speaker models. Each product is unique, offering distinctive features and quality sound. These photos showcase some of our past and current designs, however, you can place orders for customized speakers tailored to your specific needs.</p> 
+                        <p className="fw-light fs-5 text-start mt-1 mb-5">Explore our collection of past speaker models. Each product is unique, offering distinctive features and quality sound. These photos showcase some of our past and current designs, however, you can place orders for customized speakers tailored to your specific needs.</p> 
                     </div>
                 </Col>
             </Row>
-            <Row style={{height: "110vh"}}>
+            <Row  className="mt-1">
                 <Col>
+                <div>
                     <ProductCards></ProductCards>
+                </div>
                     <div className="pt-4 d-flex justify-content-center">
                         <hr style={{border: "1px solid black ", width: "70%"}} />
                     </div>
@@ -101,7 +125,7 @@ function Home() {
         </Container>
         <Container
         fluid
-        className="bg-primary d-flex align-items-center justify-content-center mt-5 text-secondary"
+        className="bg-primary d-flex align-items-center justify-content-center mt-5 text-secondary d-none d-lg-block"
         >
         <div style={{ minWidth: "90%", maxWidth: "1000px", height: "70vh" }}>
             <Row className="h-100 d-flex align-items-center">
@@ -132,16 +156,65 @@ function Home() {
             </Row>
         </div>
         </Container>
+        <Container
+  fluid
+  className="bg-primary d-block d-md-none text-secondary mt-5 px-3 pb-5"
+>
+  <Row>
+    <Col xs={12} className="mb-3">
+      <img
+        src={Dan}
+        alt="Dan"
+        className="img-fluid w-100 object-fit-cover rounded-4"
+        style={{ height: "40vh", objectFit: "cover" }}
+      />
+    </Col>
+  </Row>
+  <Row>
+    <Col xs={12}>
+      <div className="text-start">
+        <h1 className="fw-bold display-4 mb-4">Our Story</h1>
+        <h5 className="fw-lighter">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus vero excepturi velit est.
+          Facilis laboriosam odit neque perspiciatis quis corporis saepe quisquam deleniti voluptatibus
+          inventore sed, aut beatae ducimus nostrum dicta. Temporibus, dignissimos? Error, itaque labore
+          quisquam omnis eius nisi? Error expedita reprehenderit exercitationem delectus nihil mollitia,
+          maxime sed distinctio.
+        </h5>
+      </div>
+    </Col>
+  </Row>
+  <Row className="mt-4">
+    <Col className="d-flex justify-content-center">
+      <CustomButton variant="secondary" href="/about">
+        About us
+      </CustomButton>
+    </Col>
+  </Row>
+</Container>
+
         <Container className="bg-secondary pt-5 d-flex align-items-center justify-content-center flex-column mt-5 mb-1" fluid >
-            <Row  style={{height: "35vh"}}>
+            <Row style={{ height: "35vh" }} className="d-none d-lg-flex align-items-center">
                 <Col className="ps-5" xs={4}>
-                    <div className=" p-5 text-black" style={{height: "20vh"}} >
-                        <h1 ref={subheadingRef} className="fw-bolder display-5">Additional Services</h1>
+                    <div className=" ps-5 text-black" style={{height: "20vh"}} >
+                        <h1 ref={headingRef} className="fw-bolder display-5">Additional Services</h1>
                     </div>
                 </Col>
                 <Col>
                     <div className=" p-5 text-primary justify-content-center d-flex align-items-center" >
-                        <p className="fw-light fs-5 text-end">We also offer additional services to help you get the best out of your speakers. From custom designs to repairs and maintenance, we have got you covered. Contact us to learn more about our services and how we can help you.</p> 
+                        <p className="fw-light fs-5 text-end">Explore our collection of past speaker models. Each product is unique, offering distinctive features and quality sound. These photos showcase some of our past and current designs, however, you can place orders for customized speakers tailored to your specific needs.</p> 
+                    </div>
+                </Col>
+            </Row>
+             <Row   className="d-block d-lg-none">
+                <Col className="ps-5" xs={12}>
+                    <div className=" px-5 pt-4 text-black" style={{height: "100%"}} >
+                        <h1 ref={headingRef} className="fw-bolder display-5">Additional Services</h1>
+                    </div>
+                </Col>
+                <Col>
+                    <div className=" p-5 text-primary justify-content-center d-flex align-items-center" >
+                        <p className="fw-light fs-5 text-start mt-1 mb-5">Explore our collection of past speaker models. Each product is unique, offering distinctive features and quality sound. These photos showcase some of our past and current designs, however, you can place orders for customized speakers tailored to your specific needs.</p> 
                     </div>
                 </Col>
             </Row>
@@ -169,11 +242,11 @@ function Home() {
         </Container>
         <Container
         fluid
-        className="bg-primary d-flex align-items-center justify-content-center mt-5 text-secondary"
+        className="bg-primary d-flex align-items-center justify-content-center mt-5 text-secondary d-none d-lg-block"
         >
         <div style={{ minWidth: "90%", maxWidth: "1000px", height: "70vh" }}>
             <Row className="h-100 d-flex align-items-center">
-                <Col className="pe-4 h-100 text-start d-flex flex-column justify-content-between">
+                <Col className="pe-4 h-100 text-start d-flex flex-column justify-content-between p-5">
                     <div className="p-3">
                         <h1 className="fw-bold display-2 mb-5">Design Process</h1>
                         <h4 className="fw-lighter">
@@ -197,6 +270,42 @@ function Home() {
             </Row>
         </div>
         </Container>
+        <Container
+  fluid
+  className="bg-primary d-block d-md-none text-secondary mt-5 px-3 pb-5"
+>
+  <Row>
+    <Col xs={12} className="mb-3">
+      <img
+        src={Product1d}
+        alt="Design Process"
+        className="img-fluid w-100 object-fit-cover rounded-4"
+        style={{ height: "40vh", objectFit: "cover" }}
+      />
+    </Col>
+  </Row>
+  <Row>
+    <Col xs={12}>
+      <div className="text-start">
+        <h1 className="fw-bold display-4 mb-4">Design Process</h1>
+        <h5 className="fw-lighter">
+          Discover the meticulous design process that goes into creating our products.
+          From initial concepts to the final touches, every step is crafted with precision
+          and care, ensuring that each product not only looks stunning but also performs
+          exceptionally. Join us as we delve into the art and science of design.
+        </h5>
+      </div>
+    </Col>
+  </Row>
+  <Row className="mt-4">
+    <Col className="d-flex justify-content-center">
+      <CustomButton variant="secondary" href="/about">
+        Learn More
+      </CustomButton>
+    </Col>
+  </Row>
+</Container>
+
       </>
     );
 }
